@@ -2,6 +2,7 @@
 use App\Libraries\AdminConfig;
 $pageTitle=AdminConfig::get('title');
 $username=(isEmptyArray($user)>0) ? checkVariable($user['username'],'','trim') : '';
+echo 'hike';
  ?>
 <!DOCTYPE html>
 <html lang="en">
