@@ -1,0 +1,122 @@
+body.pinkBachground
+{
+background-image: url(../images/bg/pngtreePink.jpg);
+background-size: 100%;
+background-position: initial;
+background-repeat: no-repeat;
+}
+body.authenticate
+{
+background-color: #f4f7fc;
+background-color: #19875421!important;
+}
+.pageTitle
+{
+	color: var(--bs-green);
+}
+div.sidebar
+{
+width:275px;
+}
+:root{
+scrollbar-face-color: rgb(210,210,210); /* Firefox 63 compatibility */
+scrollbar-track-color: #f4f7fc; /* Firefox 63 compatibility */
+scrollbar-color:  #a4d0ff #f4f7fc;
+scrollbar-width: thin;
+}
+
+button.btnNone
+{
+	background:none;
+	border:none;
+	box-shadow:none;
+	outline-style:none ! important;
+	outline: none ! important;
+    box-shadow: none ! important;
+}
+button.btnNone i.icon
+{
+	font-size: 1.7rem;
+}
+
+button.btnNone i.on
+{
+	color:#398439;
+}
+button.btnNone i.off
+{
+	color:#d9534f;
+} 
+
+html::-webkit-scrollbar,.offcanvas-body::-webkit-scrollbar {
+width: 10px;
+}
+
+html::-webkit-scrollbar-track,.offcanvas-body::-webkit-scrollbar-track {
+background: #f4f7fc;
+border-radius: 10px;
+}
+
+html::-webkit-scrollbar-thumb,.offcanvas-body::-webkit-scrollbar-thumb  {
+background: #a4d0ff;
+}
+
+html::-webkit-scrollbar-thumb:hover,.offcanvas-body::-webkit-scrollbar-thumb:hover  {
+background: #a4d0ff;
+}
+
+html::-webkit-scrollbar-thumb:active,.offcanvas-body::-webkit-scrollbar-thumb:active  {
+background: #a4d0ff;
+}
+
+.theme-text
+{
+color: var(--bs-green)  !important;
+}
+.sidebar ul.nav li a.nav-link
+{
+color:white!important;
+}
+.userPointer
+{
+	cursor: pointer;
+}
+.mandatorySymbols  
+{
+	font-size: 8px !important;
+}
+.optionImagePreview
+{
+	width:45px;
+}
+.optionImagePreview-2
+{
+	width:45px;
+}
+textarea.noResize
+{
+	  resize: none  !important;
+}
+.sidebar ul.nav li a.nav-link:hover
+{
+color:#007bff;
+color:var(--bs-green)!important;
+background:white!important;
+} 
+.sidebar ul.nav li ul
+{
+color:white!important;
+background-color: #4ea94e !important;
+}
+.theme-bg
+{
+--bs-bg-opacity: 1;
+/* background-color: rgba(var(--bs-primary-rgb),var(--bs-bg-opacity))!important; */
+background-color: var(--bs-green) !important;
+}
+@media  screen and (min-width:768px){
+nav.navbar .navbar-nav .dropdown-menu
+{
+	margin-top:1rem !important;
+}
+}
