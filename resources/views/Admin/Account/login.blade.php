@@ -4,7 +4,6 @@ $status=0;
 $msg=0;
 if(isEmptyArray($errors)>0)
 {
-	
 	$status=checkVariable($errors['status'],0,'intval');
 	$msg=checkVariable($errors['msg'],0);
 }
