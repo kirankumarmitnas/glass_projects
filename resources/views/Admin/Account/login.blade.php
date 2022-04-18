@@ -7,7 +7,6 @@ if(isEmptyArray($errors)>0)
 	$status=checkVariable($errors['status'],0,'intval');
 	$msg=checkVariable($errors['msg'],0);
 }
-$kiran='hike';
 ?>
 @include('admin.common.headerLink');
 <section class="container">
