@@ -1,5 +1,6 @@
 <?php
-$errors=Session::has('errors');
+use Illuminate\Http\Request;
+//$errors=Session::has('errors');
 $status=0;
 $msg=0;
 if(isEmptyArray($errors)>0)
@@ -8,11 +9,25 @@ if(isEmptyArray($errors)>0)
 	$msg=checkVariable($errors['msg'],0);
 }
 ?>
-@include('admin.common.headerLink');
+@include('admin.common.headerLink')
 <section class="container">
 <div class="row align-items-center align-self-center justify-content-center">
 <div class="col-md-4 mt-3 mt-md-5">
-{{ Form::open(array('url' =>url('admin/login'),'name'=>'loginForm','class'=>'form','method'=>'POST'));}}
+<?php 
+//@if(!$errors->isEmpty()) 
+//@if ($errors->any())
+    //<div class="alert alert-danger">
+        //<ul>
+           // @foreach ($errors->all() as $error)
+			
+                //<li>{{ $error }}</li>
+            //@endforeach
+       // </ul>
+   // </div>
+//@endif
+//@endif 
+?>
+{{ Form::open(array('url' =>url('admin/login'),'name'=>'loginForm','class'=>'form','method'=>'POST')) }}
 <div class="card shadow invisible rounded mt-md-5 rounded-top bg-white text-white">
   <div class="card-body theme-bg">
     <p class="h2 text-center"><i class="fas2 fa-question2 far fa-user-circle fa-2x rounded-circle  px-3 py-2"></i></p>
@@ -26,13 +41,13 @@ if(isEmptyArray($errors)>0)
   <div class="card-body">
 	<div class="mb-1">
 	<label  class="form-label text-dark"><i class="fas fa-user me-1"></i> Username</label>
-	<input type="text" class="form-control @if($status==-11) is-invalid  @endif" value="{{ old('username') }}" required  name="username" maxlength="64" placeholder="Enter Username" />
-	@if($status==-11) <div class="invalid-feedback"> Please provide a valid city.</div> @endif
+	<input type="text" class="form-control  {{ $errors->has('username') ? 'is-invalid' : '' }}" value="{{ old('username') }}" required  name="username" maxlength="64" placeholder="Enter Username" />
+	@if($errors->has('username')) <div class="invalid-feedback"> {{ $errors->first('username') }}</div> @endif
 	</div>
 	<div class="mb-3">
 	<label  class="form-label text-dark"><i class="fas fa-lock me-1"></i>Password</label>
-	<input type="password" class="form-control @if($status==-11) is-invalid @endif"  value="{{  old('password') }}" autocomplete="new-password" required name="password"  maxlength="30" placeholder="Enter Password" />
-	@if($status==-11) <div class="invalid-feedback"> Please provide a valid city.</div> @endif
+	<input type="password" class="form-control {{ $errors->has('password') ? 'is-invalid' : '' }}  "  value="{{  old('password') }}" autocomplete="new-password" required name="password"  maxlength="30" placeholder="Enter Password" />
+	@if($errors->has('password')) <div class="invalid-feedback"> {{ $errors->first('password') }}.</div> @endif
 	</div>
   </div>
   <div class="card-body theme-bg">
@@ -41,7 +56,7 @@ if(isEmptyArray($errors)>0)
 	</div>
   </div>
 </div>
-{{ Form::close();}}
+{{ Form::close() }}
 </div>
 </div>
 </section>
@@ -63,4 +78,4 @@ $(document).ready(function(e){
 	});
 });
 </script>
-@include('admin.common.footerLink');
+@include('admin.common.footerLink')

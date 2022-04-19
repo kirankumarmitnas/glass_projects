@@ -36,6 +36,7 @@ Route::prefix('admin4')->group(function () {
 Route::group(['prefix' => 'admin','namespace' => 'App\Http\Controllers'], function()
 {
   Route::get('users',function(){return 'Matches The "/admin/users" URL';});
-  Route::get('login','Admin\LoginController@showLogin');
+  Route::get('login','Admin\LoginController@showLogin')->name('user.showLogin');
+  Route::post('login','Admin\LoginController@doLogin')->name('user.doLogin');
   
 });
